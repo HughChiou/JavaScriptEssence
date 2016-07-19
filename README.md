@@ -12,7 +12,7 @@
 + imitateClass-模擬類別
 + jsPrototype-JavaScript原型
 
-
+使用VS Code Debug時修改.vscode/launch.json中的configurations > program至對應的路徑
 
 This is origined from [語言技術：JavaScript Essence](http://openhome.cc/Gossip/JavaScript/)!!
 
