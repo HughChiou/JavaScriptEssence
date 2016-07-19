@@ -12,4 +12,4 @@ var test;
     ;
 })(test || (test = {}));
 ;
-var global = global || (function () { return this; })();
+var global = global || (0, eval)('this');
