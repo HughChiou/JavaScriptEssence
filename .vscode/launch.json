@@ -5,7 +5,7 @@
             "name": "Launch",
             "type": "node",
             "request": "launch",
-            "program": "${workspaceRoot}/demo/closure.js",
+            "program": "${workspaceRoot}/demo/jsPrototype.js",
             "stopOnEntry": false,
             "args": [],
             "cwd": "${workspaceRoot}",
