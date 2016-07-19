@@ -73,5 +73,36 @@ var Circle2 = Class.create({
         return '[' + text.join() + ']';
     }
 });
-var circle = new Circle2(10,10,5)
+var circle = new Circle2(10, 10, 5);
+
+
+//encupsule inherit of classes
+Class2.extend = function (Superclz, methods) {
+    var Subclz = this.create(methods);
+    var subproto = Subclz.prototype;
+    Subclz.prototype = new Superclz();
+    for (var p in Subclz.prototype) {
+        if (Subclz.prototype.hasOwnProperty(p)) {
+            delete Subclz.prototype[p];
+        }
+    }
+    Subclz.prototype.constructor = Subclz;
+    for (var p in subproto) {
+        Subclz.prototype[p] = subproto[p];
+    }
+    return Subclz;
+}
+
+
+//Usage
+var Cylinder2 = Class2.extend(Circle, {
+    initialize: function (x, y, r, h) {
+        Circle.call(this, x, y, r);
+    },
+    volumn: function () {
+        return this.area() * this.h;
+    }
+});
+
+var cylinder = new Cylinder2(10, 10, 5, 5);
 
